@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Box, Button, withStyles } from "@material-ui/core";
 
-function App() {
+export default function MyApp(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TopbarContainer>
+      <NavItem>Home</NavItem>
+      <NavItem>Home</NavItem>
+      <NavItem>Home</NavItem>
+      <NavItem>Home</NavItem>
+      <NavItem>Home</NavItem>
+      <NavItem>Home</NavItem>
+    </TopbarContainer>
   );
 }
 
-export default App;
+const TopbarContainer = withStyles({
+  root: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    height: 200,
+    backgroundColor: "blue",
+    display: "flex",
+    ["@media (max-width: 600px)"]: {
+      backgroundColor: "red",
+    },
+  },
+})(Box);
+
+const NavItem = withStyles({
+  root: {
+    color: "white",
+    margin: "1rem 3rem",
+  },
+})(Box);
